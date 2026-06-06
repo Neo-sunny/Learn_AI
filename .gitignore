@@ -1,0 +1,29 @@
+# Python virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache & compiles
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files (contains API keys)
+.env
+.env.local
+
+# IDE configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Local Vector Databases / Temporary Data
+*.faiss
+*.index
+*.db
+*.log

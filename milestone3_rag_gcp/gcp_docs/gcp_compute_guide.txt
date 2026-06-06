@@ -1,0 +1,28 @@
+Google Cloud Platform (GCP) Compute Service Selection Guide
+===========================================================
+
+Selecting the right compute service depends on control, packaging, scalability requirements, and cost.
+
+1. Cloud Run (Serverless Containers)
+------------------------------------
+* Description: Fully managed compute platform that automatically scales stateless containers from 0 to thousands of instances.
+* Best for: Web APIs, microservices, background task processing, event-driven webhooks.
+* Pros: Scale-to-zero (zero cost when idle), extremely simple deployment, built-in HTTPS endpoints, cost-effective.
+* Limits: Requests must complete within 60 minutes. Maximum CPU and RAM per instance are capped. Best for stateless workloads only.
+
+2. Google Kubernetes Engine (GKE)
+----------------------------------
+* Description: Managed Kubernetes service for orchestrating containerized workloads.
+* Best for: Complex microservices architectures, stateful applications (e.g. running your own databases or queues), workloads requiring high custom networking controls, and large-scale deployments.
+* Pros: Multi-cloud compatibility, high flexibility, hybrid connectivity, supports persistent volumes.
+* Downside: Operational overhead to manage cluster config, nodes, and networking, unless using GKE Autopilot.
+
+3. Compute Engine (Virtual Machines)
+------------------------------------
+* Description: Infrastructure-as-a-Service (IaaS) offering virtual machines.
+* Best for: Custom operating systems, third-party software installations that cannot be containerized, legacy migration, bare-metal configurations.
+
+4. Cloud Functions (Serverless Functions)
+-----------------------------------------
+* Description: Event-driven serverless functions (FaaS).
+* Best for: Lightweight glue code, webhooks, Reacting to Cloud Storage uploads, reacting to Pub/Sub events.

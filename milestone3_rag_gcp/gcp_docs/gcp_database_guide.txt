@@ -1,0 +1,29 @@
+Google Cloud Platform (GCP) Database Selection Guide
+=====================================================
+
+When architecting backend systems on Google Cloud, selecting the right database is critical for performance, cost, and availability. Use the guidelines below.
+
+1. Relational Databases
+-----------------------
+* Cloud SQL: Fully managed PostgreSQL, MySQL, and SQL Server.
+  - Best for: Standard relational schemas, migrating existing legacy applications, lift-and-shift, transactions up to a moderate scale.
+  - Limits: Regional database. Max storage is 64 TB. High-availability is active-passive.
+  - Scaling: Vertical scaling (instance sizes) and read replicas.
+
+* Cloud Spanner: Enterprise-grade, globally distributed relational database.
+  - Best for: High-scale relational databases needing horizontal scaling, global consistency, and 99.999% availability.
+  - Key Features: Unlimited scale (sharded automatically), synchronous global replication, strong transactional consistency.
+  - Downside: Higher starting cost compared to Cloud SQL.
+
+2. Non-Relational / NoSQL Databases
+-----------------------------------
+* Firestore: Serverless, document database.
+  - Best for: Mobile and web applications, real-time sync, hierarchical JSON-like document data structures.
+  - Scaling: Serverless auto-scaling. Excellent integration with Firebase SDKs.
+
+* Cloud Bigtable: NoSQL wide-column database.
+  - Best for: Extremely high-throughput workloads, time-series data, operational analytics, IoT sensor data, and data volumes > 10 TB.
+  - Limits: Low-latency key-value operations. Does not support complex transactions across rows or SQL queries (uses API or HBase shell). Requires a minimum node footprint.
+
+* Memorystore: Managed Redis and Memcached.
+  - Best for: Sub-millisecond latency caching, session store, pub/sub queues.
